@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  # We named it db because that is how the worker app connects to it, we cannot name  postgres-service
+  name: db
+  label: 
+    name: postgres-service
+    app: demo-voting-app
+spec:
+  type: ClusterIP
+  selector:
+    name: postgres-pod
+    app: demo-voting-app
+  ports:
+  - port: 5432
+    targetPort: 5432
