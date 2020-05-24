@@ -3,7 +3,7 @@ kind: Service
 metadata:
   # We named it redis because that is how the voting app connects to it, we cannot name  redis-service
   name: redis
-  label: 
+  labels: 
     name: redis-service
     app: demo-voting-app
 spec:
